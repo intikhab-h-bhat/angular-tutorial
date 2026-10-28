@@ -9,4 +9,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('angular-tut');
+  name="Angular Developer";
+  age=20;
+  message="welcome to Angular Developer";
+
+
 }
