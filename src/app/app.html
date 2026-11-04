@@ -1,8 +1,12 @@
 <h1>{{ title () }}</h1>
 <p>{{ name }}</p>
 <p>{{age}}</p>
-<p>{{updateMessage("Hello Angular")}}</p>
+
 
 <app-login> </app-login>
 <app-login> </app-login>
 <app-login> </app-login>
+
+<button (click)="counter('decrement')"> - </button>
+<p>{{ count }}</p>
+<button (click)="counter('increment')"> + </button>

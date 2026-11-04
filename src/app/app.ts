@@ -13,11 +13,21 @@ export class App {
   name="Angular Developer";
   age=20;
   message="welcome to Angular Developer";
-  
-  updateMessage(newMessage: string) {
-    this.message = newMessage;
-    return this.message;
+  count=0;
+
+  counter(action: string) {
+    if(action=="increment")
+    this.count++;
+    else if(action=="decrement")
+      this.count>0 && this.count--;
   }
+
+
+  // updateMessage(newMessage: string) {
+  //   this.message = newMessage;
+  //   alert(this.message);
+  //   // return this.message;
+  // }
  
 
 }
