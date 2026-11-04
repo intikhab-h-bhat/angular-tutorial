@@ -12,6 +12,11 @@ export class App {
   name="Angular Developer";
   age=20;
   message="welcome to Angular Developer";
-
+  
+  updateMessage(newMessage: string) {
+    this.message = newMessage;
+    return this.message;
+  }
+ 
 
 }
