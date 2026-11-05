@@ -1,6 +1,7 @@
 <h1>{{ title () }}</h1>
 <p>{{ name }}</p>
 <p>{{age}}</p>
+<!-- {{ updateMessage('12')}} -->
 
 
 <app-login> </app-login>
@@ -10,3 +11,11 @@
 <button (click)="counter('decrement')"> - </button>
 <p>{{ count }}</p>
 <button (click)="counter('increment')"> + </button>
+
+<input type="text" (change)="onInput($event.type)">
+<button (click)="ChangeColor()">Change div Color </button>
+
+<div [style.backgroundColor]="setColor" (mouseover)="onMouseOver($event.type)"></div>
+
+
+<button [disabled]="disabled">Click Me</button>

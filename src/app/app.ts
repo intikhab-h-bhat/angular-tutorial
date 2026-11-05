@@ -10,10 +10,13 @@ import { Login } from './login/login';
 })
 export class App {
   protected readonly title = signal('angular-tut');
-  name="Angular Developer";
+  name:string="Angular Developer";
   age=20;
   message="welcome to Angular Developer";
-  count=0;
+  setColor='lightblue';
+  disabled=false;
+
+  count:number=0;
 
   counter(action: string) {
     if(action=="increment")
@@ -22,12 +25,30 @@ export class App {
       this.count>0 && this.count--;
   }
 
+onInput(event:Event | string) {
+  console.log(event);
+}
 
-  // updateMessage(newMessage: string) {
+  onMouseOver(event:Event | string) {
+    
+    console.log(event);
+  }
+
+
+  ChangeColor(){
+    console.log('Changing color to red');
+    this.setColor = "red";
+  }
+
+  // updateMessage(newMessage: string): string {
   //   this.message = newMessage;
-  //   alert(this.message);
-  //   // return this.message;
+  //  // alert(this.message);
+  //   return this.message;
   // }
+
+  
+
+
  
 
 }
