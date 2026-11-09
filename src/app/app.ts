@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 
@@ -9,46 +9,35 @@ import { Login } from './login/login';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('angular-tut');
-  name:string="Angular Developer";
-  age=20;
-  message="welcome to Angular Developer";
-  setColor='lightblue';
-  disabled=false;
+  data=0;
+  count=signal(0);
 
-  count:number=0;
-
-  counter(action: string) {
-    if(action=="increment")
-    this.count++;
-    else if(action=="decrement")
-      this.count>0 && this.count--;
-  }
-
-onInput(event:Event | string) {
-  console.log(event);
+constructor(){
+  effect(() => {
+    //console.log(this.data);
+    console.log(this.count());
+  });
 }
 
-  onMouseOver(event:Event | string) {
+
+  updatecount() {
+    this.count.set(this.count() + 1);   
     
-    console.log(event);
-  }
-
-
-  ChangeColor(){
-    console.log('Changing color to red');
-    this.setColor = "red";
-  }
-
-  // updateMessage(newMessage: string): string {
-  //   this.message = newMessage;
-  //  // alert(this.message);
-  //   return this.message;
-  // }
-
-  
-
-
- 
-
+    if (this.count()=== 10) {
+      this.count.set(0);
+      console.log('Count reset to 0');
 }
+  }
+
+  updateData() {
+    this.data += 1;
+    // console.log(this.data);
+     if (this.data === 10) {
+      this.data = 0;
+      console.log('Data reset to 0');
+    }
+  }
+}
+
+
+
