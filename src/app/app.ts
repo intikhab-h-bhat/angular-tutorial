@@ -1,9 +1,10 @@
 import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
+import { ProfileComponent } from './profile/profile.component';
 
 @Component({
-  imports: [RouterOutlet,Login],
+  imports: [RouterOutlet,Login,ProfileComponent],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
