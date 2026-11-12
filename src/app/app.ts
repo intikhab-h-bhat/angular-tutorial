@@ -2,9 +2,10 @@ import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { ProfileComponent } from './profile/profile.component';
+import { Counter } from './counter/counter';
 
 @Component({
-  imports: [RouterOutlet,Login,ProfileComponent],
+  imports: [RouterOutlet,Login,ProfileComponent,Counter],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
