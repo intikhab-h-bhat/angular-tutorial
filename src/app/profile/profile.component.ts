@@ -14,4 +14,15 @@ import { Component } from '@angular/core';
 
 
 
+
+updateProfile(funcalled:string) {
+    console.log('Profile updated!');
+    console.log(funcalled);
+    this.otherFunction('Other Function');
+}
+
+otherFunction(otherfun:string) {
+    alert('Other function called! ' + otherfun);
+}
+
    }
